@@ -43,5 +43,13 @@ Entregables:
 
 Subir los entregables anteriores en la rama master creada previamente.
 
+Criterios de evaluación:
+-----------------------
+1. Completitud de la prueba: 25%
+2. Estructuración del proyecto y prácticas de desarrollo: 20%
+3. Pruebas de unidad y cobertura: 15%
+4. Cumplimiento: 20%
+5. Conocimientos: 20%
+
 
 Happy Coding!
