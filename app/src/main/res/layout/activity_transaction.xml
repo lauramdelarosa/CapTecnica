@@ -27,145 +27,135 @@
                 card_view:layout_constraintTop_toBottomOf="@+id/imageView2"
                 card_view:layout_constraintHorizontal_bias="0.5" android:layout_marginBottom="8dp">
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
                     android:padding="5dp"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
+                    android:id="@+id/transactionActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".ui.AccountActivity"
+                    card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+            >
 
-                    android:layout_height="match_parent">
 
+                <com.google.android.material.textfield.TextInputLayout
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                        xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                        xmlns:tools="http://schemas.android.com/tools"
                         android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        tools:context=".ui.AccountActivity"
-                        android:id="@+id/constraintLayout"
-                        card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="wrap_content"
+                        card_view:layout_constraintEnd_toEndOf="parent"
                         card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5"
+                        card_view:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/textInputLayout9"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+                        card_view:layout_constraintVertical_chainStyle="spread_inside"
+                        android:layout_marginTop="8dp">
+                    <EditText
+                            android:id="@+id/customer_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="document"
+                            android:inputType="text"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout12"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout11"
+                        card_view:layout_constraintBottom_toTopOf="@+id/create_transaction_button">
+                    <EditText
+                            android:id="@+id/channel_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="channnel"
+                            android:inputType="text"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textInputLayout"
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout9"
+                        card_view:layout_constraintHorizontal_bias="0.5"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout10">
+                    <EditText
+                            android:id="@+id/pruduct_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="product number"
+                            android:inputType="number"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout10"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout11">
+
+
+                    <EditText
+                            android:id="@+id/amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="amount"
+                            android:inputType="number"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout11"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout10"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout12">
+                    <EditText
+                            android:id="@+id/type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="type"
+                            android:inputType="text"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                        android:text="do transaction"
+                        android:layout_width="286dp"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:id="@+id/create_transaction_button"
                         card_view:layout_constraintBottom_toBottomOf="parent"
-                >
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout12"
+                        card_view:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp" card_view:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
 
-
-                    <com.google.android.material.textfield.TextInputLayout
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            card_view:layout_constraintEnd_toEndOf="parent"
-                            card_view:layout_constraintStart_toStartOf="parent"
-                            card_view:layout_constraintHorizontal_bias="0.5"
-                            card_view:layout_constraintTop_toTopOf="parent"
-                            android:id="@+id/textInputLayout9"
-                            card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-                            card_view:layout_constraintVertical_chainStyle="spread_inside"
-                            android:layout_marginTop="8dp">
-                        <EditText
-                                android:id="@+id/customer_id"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:hint="document"
-                                android:inputType="text"
-                                android:singleLine="true"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            card_view:layout_constraintEnd_toEndOf="parent"
-                            card_view:layout_constraintStart_toStartOf="parent"
-                            card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout12"
-                            card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout11"
-                            card_view:layout_constraintBottom_toTopOf="@+id/create_transaction_button">
-                        <EditText
-                                android:id="@+id/channel_id"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:hint="channnel"
-                                android:inputType="text"
-                                android:singleLine="true"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/textInputLayout"
-                            card_view:layout_constraintEnd_toEndOf="parent"
-                            card_view:layout_constraintStart_toStartOf="parent"
-                            card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout9"
-                            card_view:layout_constraintHorizontal_bias="0.5"
-                            card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout10">
-                        <EditText
-                                android:id="@+id/pruduct_number"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:hint="product number"
-                                android:inputType="number"
-                                android:singleLine="true"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            card_view:layout_constraintEnd_toEndOf="parent"
-                            card_view:layout_constraintStart_toStartOf="parent"
-                            card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout10"
-                            card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-                            card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout11">
-
-
-                        <EditText
-                                android:id="@+id/amount"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:hint="amount"
-                                android:inputType="number"
-                                android:singleLine="true"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            card_view:layout_constraintEnd_toEndOf="parent"
-                            card_view:layout_constraintStart_toStartOf="parent"
-                            card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout11"
-                            card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout10"
-                            card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout12">
-                        <EditText
-                                android:id="@+id/type"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:hint="type"
-                                android:inputType="text"
-                                android:singleLine="true"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <androidx.appcompat.widget.AppCompatButton
-                            android:text="do transaction"
-                            android:layout_width="286dp"
-                            android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:id="@+id/create_transaction_button"
-                            card_view:layout_constraintBottom_toBottomOf="parent"
-                            card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout12"
-                            card_view:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                            android:layout_marginRight="8dp" card_view:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

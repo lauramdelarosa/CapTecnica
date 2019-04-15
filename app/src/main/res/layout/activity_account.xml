@@ -6,6 +6,7 @@
                                        android:layout_width="match_parent"
                                        android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/accountActivity"
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -49,7 +50,7 @@
                     android:id="@+id/textInputLayout9"
                     card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout" android:layout_marginTop="8dp">
                 <EditText
-                        android:id="@+id/customer_id"
+                        android:id="@+id/customerId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"

@@ -6,6 +6,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:paddingStart="24dp"
+        android:id="@+id/loginActivity"
         android:paddingEnd="24dp"
         android:background="@color/colorPrimaryDark"
         android:layout_height="match_parent"
@@ -18,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/login"
-            card_view:layout_constraintTop_toBottomOf="@+id/editText2" card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/password" card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintBottom_toTopOf="@+id/account"
             card_view:layout_constraintStart_toStartOf="parent"/>
     <androidx.appcompat.widget.AppCompatButton
@@ -39,20 +40,20 @@
             android:id="@+id/imageView"
             android:layout_marginTop="131dp"
             android:layout_marginBottom="65dp" card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintBottom_toTopOf="@+id/editText" card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintBottom_toTopOf="@+id/customerId" card_view:layout_constraintTop_toTopOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintVertical_chainStyle="packed"
             card_view:layout_constraintHorizontal_bias="0.498" card_view:layout_constraintVertical_bias="0.39"/>
     <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="0dp"
-            android:hint="email"
+            android:hint="dni"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:id="@+id/editText"
+            android:inputType="number"
+            android:id="@+id/customerId"
             card_view:layout_constraintTop_toBottomOf="@+id/imageView"
-            card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintBottom_toTopOf="@+id/editText2"
+            card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintBottom_toTopOf="@+id/password"
             card_view:layout_constraintStart_toStartOf="parent"/>
     <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="0dp"
@@ -61,8 +62,9 @@
             android:textColorHint="@color/white"
             android:hint="password"
             android:textColor="@color/white"
-            android:id="@+id/editText2"
-            card_view:layout_constraintTop_toBottomOf="@+id/editText" android:layout_marginBottom="85dp"
+            android:id="@+id/password"
+            card_view:layout_constraintTop_toBottomOf="@+id/customerId" android:layout_marginBottom="85dp"
             card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintBottom_toTopOf="@+id/login"
             card_view:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
