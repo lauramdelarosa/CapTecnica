@@ -61,7 +61,7 @@
                             android:id="@+id/textInputLayout9"
                             card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout"
                             card_view:layout_constraintVertical_chainStyle="spread_inside"
-                    >
+                            android:layout_marginTop="8dp">
                         <EditText
                                 android:id="@+id/customer_id"
                                 android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                                 android:layout_height="wrap_content"
                                 android:ems="10"
                                 android:hint="product number"
-                                android:inputType="text"
+                                android:inputType="number"
                                 android:singleLine="true"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,7 +129,7 @@
                                 android:layout_height="wrap_content"
                                 android:ems="10"
                                 android:hint="amount"
-                                android:inputType="text"
+                                android:inputType="number"
                                 android:singleLine="true"/>
                     </com.google.android.material.textfield.TextInputLayout>
 

@@ -1,8 +1,8 @@
 package com.delarosa.mybank.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.delarosa.mybank.R
 import kotlinx.android.synthetic.main.activity_transaction.*
 

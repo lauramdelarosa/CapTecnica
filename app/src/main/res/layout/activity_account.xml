@@ -47,7 +47,7 @@
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintHorizontal_bias="0.5" card_view:layout_constraintTop_toTopOf="parent"
                     android:id="@+id/textInputLayout9"
-                    card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout">
+                    card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout" android:layout_marginTop="8dp">
                 <EditText
                         android:id="@+id/customer_id"
                         android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="mobile"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:singleLine="true"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,7 +111,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="phone"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:singleLine="true"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -171,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="email"
-                        android:inputType="text"
+                        android:inputType="textEmailAddress"
                         android:singleLine="true"/>
             </com.google.android.material.textfield.TextInputLayout>
             <androidx.appcompat.widget.AppCompatButton
