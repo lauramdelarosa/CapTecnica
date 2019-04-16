@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryDark"
-            tools:context=".ui.TransactionActivity">
+            tools:context=".ui.transaction.TransactionActivity">
     <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="0dp"
@@ -32,7 +32,7 @@
                 android:layout_height="match_parent" android:padding="5dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                tools:context=".ui.AccountActivity" android:id="@+id/constraintLayout2"
+                tools:context=".ui.account.AccountActivity" android:id="@+id/constraintLayout2"
                 android:layout_marginTop="5dp" android:layout_marginBottom="5dp"
                 card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"

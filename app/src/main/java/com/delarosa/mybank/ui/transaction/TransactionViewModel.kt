@@ -1,4 +1,4 @@
-package com.delarosa.mybank.ui
+package com.delarosa.mybank.ui.transaction
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -16,12 +16,12 @@ class TransactionViewModel : ViewModel() {
     fun accountRequest(
         costumerId: String,
         channelId: String,
-        pruduct_number: String,
+        product_number: String,
         amount: String,
         type: String
     ) {
-        if (validateData(costumerId, channelId, pruduct_number, amount, type)) {
-            requestTransaction(costumerId, channelId, pruduct_number, amount, type)
+        if (validateData(costumerId, channelId, product_number, amount, type)) {
+            requestTransaction(costumerId, channelId, product_number, amount, type)
         } else (_errorMessage.postValue("Invalid Fields"))
 
     }

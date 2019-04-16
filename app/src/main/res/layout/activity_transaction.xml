@@ -3,6 +3,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
                                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                        xmlns:tools="http://schemas.android.com/tools"
+                                       android:id="@+id/transactionActivity"
                                        android:layout_width="match_parent"
                                        android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -10,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryDark"
-            tools:context=".ui.TransactionActivity">
+            tools:context=".ui.transaction.TransactionActivity">
 
         <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -32,10 +33,10 @@
                     android:padding="5dp"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
-                    android:id="@+id/transactionActivity"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:context=".ui.AccountActivity"
+                    tools:context=".ui.account.AccountActivity"
                     card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintBottom_toBottomOf="parent"

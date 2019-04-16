@@ -10,7 +10,7 @@
         android:paddingEnd="24dp"
         android:background="@color/colorPrimaryDark"
         android:layout_height="match_parent"
-        tools:context=".ui.AccountActivity">
+        tools:context=".ui.account.AccountActivity">
 
 
     <androidx.appcompat.widget.AppCompatButton

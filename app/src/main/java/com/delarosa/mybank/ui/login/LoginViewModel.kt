@@ -1,4 +1,4 @@
-package com.delarosa.mybank.ui
+package com.delarosa.mybank.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

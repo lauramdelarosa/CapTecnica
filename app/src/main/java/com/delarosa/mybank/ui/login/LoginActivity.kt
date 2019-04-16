@@ -1,4 +1,4 @@
-package com.delarosa.mybank.ui
+package com.delarosa.mybank.ui.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.delarosa.mybank.R
+import com.delarosa.mybank.ui.account.AccountActivity
+import com.delarosa.mybank.ui.dashboard.DashboardActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_login.*
-
+/**
+ * View, in this case activity, don't think, its job is show information already proccesed by viewModel
+ */
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var viewModel: LoginViewModel

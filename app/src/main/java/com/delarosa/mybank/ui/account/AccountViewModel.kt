@@ -1,4 +1,4 @@
-package com.delarosa.mybank.ui
+package com.delarosa.mybank.ui.account
 
 import android.util.Patterns
 import androidx.lifecycle.LiveData
