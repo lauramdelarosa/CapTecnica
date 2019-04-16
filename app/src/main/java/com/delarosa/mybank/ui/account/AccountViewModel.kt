@@ -5,6 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+/**
+ * process all data and show its output to view.
+ */
 class AccountViewModel : ViewModel() {
 
     //outputs
@@ -30,7 +33,9 @@ class AccountViewModel : ViewModel() {
 
     }
 
-
+    /**
+     * this method valid data that user entered is correct
+     */
     private fun validateData(
         costumerId: String,
         name: String,
@@ -39,18 +44,23 @@ class AccountViewModel : ViewModel() {
         mobile: String,
         password: String
     ): Boolean = (
-                    isValidEmail(email)
-                && isValidText(costumerId)
-                && isValidText(name)
-                && isValidText(surname)
-                && isValidText(mobile)
-                && isValidText(password))
+            isValidEmail(email)
+                    && isValidText(costumerId)
+                    && isValidText(name)
+                    && isValidText(surname)
+                    && isValidText(mobile)
+                    && isValidText(password))
 
     private fun isValidEmail(email: String): Boolean = email.isNotEmpty() &&
             Patterns.EMAIL_ADDRESS.matcher(email).matches()
 
     private fun isValidText(string: String): Boolean = string.isNotEmpty()
 
+    /**
+     * this method request account to the api, and show its response.
+     * if response is ok, do intent to LoginActivity
+     * if not show an error
+     */
     private fun requestAccount(
         costumerId: String,
         name: String,

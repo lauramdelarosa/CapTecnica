@@ -3,7 +3,9 @@ package com.delarosa.mybank.ui.transaction
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
+/**
+ * process all data and show its output to view.
+ */
 class TransactionViewModel : ViewModel() {
 
     //outputs
@@ -26,7 +28,9 @@ class TransactionViewModel : ViewModel() {
 
     }
 
-
+    /**
+     * this method valid data that user entered is correct
+     */
     private fun validateData(
         costumerId: String,
         channelId: String,
@@ -41,6 +45,13 @@ class TransactionViewModel : ViewModel() {
                     && isValidText(type))
 
     private fun isValidText(string: String): Boolean = string.isNotEmpty()
+
+
+    /**
+     * this method request transaction to the api, and show its response.
+     * if response is ok, do intent to DashboardActivity
+     * if not show an error
+     */
 
     private fun requestTransaction(
         costumerId: String,

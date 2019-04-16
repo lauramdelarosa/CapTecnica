@@ -3,7 +3,9 @@ package com.delarosa.mybank.ui.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
+/**
+ * process all data and show its output to view.
+ */
 class LoginViewModel : ViewModel() {
 
     //outputs
@@ -14,6 +16,9 @@ class LoginViewModel : ViewModel() {
     val successResponse: LiveData<Unit> get() = _successResponse
 
     //events
+    /**
+     * this method valid data that user entered is correct
+     */
     private fun validateData(customerId: String, password: String): Boolean =
         (isValidText(customerId) && isValidText(password))
 
@@ -25,7 +30,11 @@ class LoginViewModel : ViewModel() {
         } else (_errorMessage.postValue("Invalid Fields"))
 
     }
-
+    /**
+     * this method request login to the api, and show its response.
+     * if response is ok, do intent to DashboardActivity
+     * if not show an error
+     */
     private fun requestLogin(customerId: String, password: String) {
         //se comunica con el repositorio
         if (1 == 1) {
