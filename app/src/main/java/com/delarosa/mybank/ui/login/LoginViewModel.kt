@@ -25,12 +25,12 @@ class LoginViewModel : ViewModel() {
 
     // Internal
 
-    private val _saveAuthorizationToken = MutableLiveData<String>()
+    private val _saveAuthorizationToken = MediatorLiveData<String>()
 
     init {
-        _successResponse.addSource(_saveAuthorizationToken) {
-            //saveAutorizationToken in preferences it
-            _successResponse.value = Unit
+        _saveAuthorizationToken.addSource(_successResponse) {
+            //saveAutorizationToken in preferences -- it
+            _successResponse.postValue(Unit)
         }
     }
 
@@ -38,10 +38,10 @@ class LoginViewModel : ViewModel() {
     /**
      * this method valid data that user entered is correct
      */
-     fun validateData(customerId: String, password: String): Boolean =
+    fun validateData(customerId: String, password: String): Boolean =
         (isValidText(customerId) && isValidText(password))
 
-     fun isValidText(string: String): Boolean = string.isNotEmpty()
+    fun isValidText(string: String): Boolean = string.isNotEmpty()
 
     fun loginRequest(customerId: String, password: String) {
         if (validateData(customerId, password)) {
@@ -57,8 +57,7 @@ class LoginViewModel : ViewModel() {
      */
     private fun requestLogin(customerId: String, password: String) {
 
-        _successResponse.postValue(Unit)
-       /* GlobalScope.launch(Dispatchers.Main) {
+        GlobalScope.launch(Dispatchers.Main) {
             try {
                 val webResponse = WebAccess.API.logInAsync(CustomerLogin(customerId, password)).await()
                 if (webResponse.isSuccessful) {
@@ -70,7 +69,7 @@ class LoginViewModel : ViewModel() {
                 _errorMessage.postValue(e.toString())
 
             }
-        }*/
+        }
 
     }
 
