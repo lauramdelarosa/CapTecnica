@@ -9,9 +9,6 @@ import com.delarosa.mybank.R
 import com.delarosa.mybank.ui.login.LoginActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_account.*
-import kotlinx.android.synthetic.main.activity_account.account
-import kotlinx.android.synthetic.main.activity_account.customerId
-import kotlinx.android.synthetic.main.activity_account.password
 
 /**
  * View, in this case activity, don't think, its job is show information already proccesed by viewModel
@@ -45,7 +42,7 @@ class AccountActivity : AppCompatActivity() {
                 phone.text.toString(),
                 mobile.text.toString(),
                 password.text.toString()
-                )
+            )
         }
 
     }
@@ -61,6 +58,6 @@ class AccountActivity : AppCompatActivity() {
      */
     override fun onBackPressed() {
         super.onBackPressed()
-        startActivity( Intent(this, LoginActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 }

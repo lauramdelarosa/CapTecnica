@@ -36,15 +36,15 @@ class TransactionViewModel : ViewModel() {
     /**
      * this method valid data that user entered is correct
      */
-     fun validateData(
+    fun validateData(
         costumerId: String,
         productNumber: String,
         amount: String
     ): Boolean = (isValidText(costumerId)
-                    && isValidText(productNumber)
-                    && isValidText(amount))
+            && isValidText(productNumber)
+            && isValidText(amount))
 
-     fun isValidText(string: String): Boolean = string.isNotEmpty()
+    fun isValidText(string: String): Boolean = string.isNotEmpty()
 
 
     /**

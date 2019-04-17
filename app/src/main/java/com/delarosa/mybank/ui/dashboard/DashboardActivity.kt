@@ -31,14 +31,6 @@ class DashboardActivity : AppCompatActivity() {
             showMessage(it)
         })
 
-        /* viewModel.successResponseAmount.observe(this, Observer {
-             startActivity(Intent(this, TransactionActivity::class.java))
-         })
-
-         viewModel.errorMessageTransaction.observe(this, Observer {
-             showMessage(it)
-         })*/
-
         viewModel.successResponseTransactionList.observe(this, Observer {
             adapter.postItemList = it ?: listOf()
             adapter.notifyDataSetChanged()
@@ -50,7 +42,7 @@ class DashboardActivity : AppCompatActivity() {
             amount.text = it
         })
 
-        see_amount.setOnClickListener { viewModel.getAmount() }
+        see_amount.setOnClickListener { viewModel.getAmountData() }
         transactionList.setOnClickListener { startActivity(Intent(this, TransactionActivity::class.java)) }
     }
 

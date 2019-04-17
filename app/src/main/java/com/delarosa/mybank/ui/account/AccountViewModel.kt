@@ -67,7 +67,7 @@ open class AccountViewModel : ViewModel() {
      * if response is ok, do intent to LoginActivity
      * if not show an error
      */
-   private fun requestAccount(customer: Customer) {
+    private fun requestAccount(customer: Customer) {
         GlobalScope.launch(Dispatchers.Main) {
             try {
                 val webResponse = WebAccess.API.signUpAsync(customer = customer).await()

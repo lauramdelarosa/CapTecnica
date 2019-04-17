@@ -37,15 +37,21 @@ class DashboardViewModel : ViewModel() {
     }
 
 
+     fun getAmountData() {
+         getAmount("12345")
+    }
+
+
     //events
     /**
      * this method request amount to the api, and show its response.
      * if response is ok, show the current amount
      * if not show an error
      */
-    fun getAmount() {
+    fun getAmount(customerId:String) {
         GlobalScope.launch(Dispatchers.Main) {
             try {
+             //   val webResponse = WebAccess.API.getCustomerProductsAsync(customerId).await()
                 val webResponse = WebAccess.API.getCustomerProductsAsync().await()
                 if (webResponse.isSuccessful) {
                     val amount: Product? = webResponse.body()

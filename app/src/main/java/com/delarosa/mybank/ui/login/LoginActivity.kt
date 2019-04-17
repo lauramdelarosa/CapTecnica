@@ -10,6 +10,7 @@ import com.delarosa.mybank.ui.account.AccountActivity
 import com.delarosa.mybank.ui.dashboard.DashboardActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_login.*
+
 /**
  * View, in this case activity, don't think, its job is show information already proccesed by viewModel
  */

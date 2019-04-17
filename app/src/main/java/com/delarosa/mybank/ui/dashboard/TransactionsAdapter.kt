@@ -32,7 +32,7 @@ class TransactionsAdapter(var postItemList: List<TransactionList>) :
         fun bind(transactionList: TransactionList) {
             itemView.transaction_number.text = transactionList.transactionNumber
 
-            itemView.date.text =transactionList.date.substring(0,10)
+            itemView.date.text = transactionList.date.substring(0, 10)
             itemView.status.text = transactionList.status
             itemView.amount.text = transactionList.amount
         }
