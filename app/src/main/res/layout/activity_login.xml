@@ -46,7 +46,7 @@
             card_view:layout_constraintHorizontal_bias="0.498" card_view:layout_constraintVertical_bias="0.39"/>
     <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="0dp"
-            android:hint="dni"
+            android:hint="document"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:layout_height="wrap_content"

@@ -11,7 +11,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 object WebAccess {
    // private const val BASE_URL = "http://localhost:4443/"
    //estas son de prueba con Mockoon
-    private const val BASE_URL = "http://192.168.1.7:4443/"
+    private const val BASE_URL = "http://192.168.1.11:4443/"
     val API: ApiClient by lazy {
         Log.d("WebAccess", "Creating retrofit client")
         val retrofit = Retrofit.Builder()

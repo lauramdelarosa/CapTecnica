@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.delarosa.mybank.R
-import com.delarosa.mybank.model.Transaction
+import com.delarosa.mybank.model.TransactionList
 import kotlinx.android.synthetic.main.transaction_item_list.view.*
 
 
-class TransactionsAdapter(var postItemList: List<Transaction>) :
+class TransactionsAdapter(var postItemList: List<TransactionList>) :
     androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -29,12 +29,12 @@ class TransactionsAdapter(var postItemList: List<Transaction>) :
     override fun getItemCount() = postItemList.size
 
     class PartViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
-        fun bind(transaction: Transaction) {
-            itemView.transaction_number.text = transaction.transactionNumber
+        fun bind(transactionList: TransactionList) {
+            itemView.transaction_number.text = transactionList.transactionNumber
 
-            itemView.date.text =transaction.date.substring(0,10)
-            itemView.status.text = transaction.status
-            itemView.amount.text = transaction.amount
+            itemView.date.text =transactionList.date.substring(0,10)
+            itemView.status.text = transactionList.status
+            itemView.amount.text = transactionList.amount
         }
     }
 }

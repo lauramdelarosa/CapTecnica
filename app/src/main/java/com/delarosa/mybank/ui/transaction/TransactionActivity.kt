@@ -9,6 +9,7 @@ import com.delarosa.mybank.R
 import com.delarosa.mybank.ui.dashboard.DashboardActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_transaction.*
+
 /**
  * View, in this case activity, don't think, its job is show information already proccesed by viewModel
  */
@@ -35,10 +36,8 @@ class TransactionActivity : AppCompatActivity() {
         create_transaction_button.setOnClickListener {
             viewModel.accountRequest(
                 customer_id.text.toString(),
-                channel_id.text.toString(),
                 pruduct_number.text.toString(),
-                amount.text.toString(),
-                type.text.toString()
+                amount.text.toString()
             )
         }
     }
@@ -46,8 +45,6 @@ class TransactionActivity : AppCompatActivity() {
 
     private fun showMessage(message: String) =
         Snackbar.make(transactionActivity, message, Snackbar.LENGTH_LONG).show()
-
-
 
 
 }

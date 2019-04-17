@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.delarosa.mybank.datasource.WebAccess
 import com.delarosa.mybank.model.Product
-import com.delarosa.mybank.model.Transaction
+import com.delarosa.mybank.model.TransactionList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -24,8 +24,8 @@ class DashboardViewModel : ViewModel() {
     val errorMessageAmount: LiveData<String> get() = _errorMessage
 
 
-    private val _successResponseTransaction = MutableLiveData<List<Transaction>>()
-    val successResponseTransaction: LiveData<List<Transaction>> get() = _successResponseTransaction
+    private val _successResponseTransaction = MutableLiveData<List<TransactionList>>()
+    val successResponseTransactionList: LiveData<List<TransactionList>> get() = _successResponseTransaction
 
 
     init {
@@ -73,11 +73,11 @@ class DashboardViewModel : ViewModel() {
                 //  val webResponse = WebAccess.API.getLastTransactionsAsync(limit, costumerId, productNumber).await()
                 val webResponse = WebAccess.API.getLastTransactionsAsync().await()
                 if (webResponse.isSuccessful) {
-                    val postList: List<Transaction>? = webResponse.body()
+                    val postList: List<TransactionList>? = webResponse.body()
                     _successResponseTransaction.value = postList
 
                 } else {
-                    _errorMessage.value = "List Transaction Error"
+                    _errorMessage.value = "List TransactionList Error"
                 }
             } catch (e: IOException) {
             }

@@ -3,6 +3,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
                                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                        xmlns:tools="http://schemas.android.com/tools"
+                                       android:background="@color/colorPrimaryDark"
                                        android:layout_width="match_parent"
                                        android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -10,216 +11,217 @@
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
-            tools:context=".ui.transaction.TransactionActivity">
-    <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="0dp"
-            android:layout_height="571dp"
-            card_view:cardCornerRadius="3dp"
-            card_view:cardElevation="3dp"
-            card_view:cardUseCompatPadding="true"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent" card_view:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-            card_view:layout_constraintTop_toBottomOf="@+id/imageView2"
-            card_view:layout_constraintHorizontal_bias="1.0" android:layout_marginBottom="16dp">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" android:padding="5dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                tools:context=".ui.account.AccountActivity" android:id="@+id/constraintLayout2"
-                android:layout_marginTop="5dp" android:layout_marginBottom="5dp"
-                card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
+            tools:context=".ui.transactionList.TransactionActivity">
+        <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="0dp"
+                android:layout_height="571dp"
+                card_view:cardCornerRadius="3dp"
+                card_view:cardElevation="3dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
-                card_view:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp">
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                card_view:layout_constraintTop_toBottomOf="@+id/imageView2"
+                card_view:layout_constraintHorizontal_bias="1.0" android:layout_marginBottom="16dp">
 
 
-            <com.google.android.material.textfield.TextInputLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    card_view:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:padding="5dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    tools:context=".ui.account.AccountActivity" android:id="@+id/constraintLayout2"
+                    android:layout_marginTop="5dp" android:layout_marginBottom="5dp"
+                    card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
                     card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintHorizontal_bias="0.5" card_view:layout_constraintTop_toTopOf="parent"
-                    android:id="@+id/textInputLayout9"
-                    card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout" android:layout_marginTop="8dp">
-                <EditText
-                        android:id="@+id/customerId"
-                        android:layout_width="match_parent"
+                    card_view:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="document"
-                        android:inputType="text"
-                        android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" card_view:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/textInputLayout9"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout" android:layout_marginTop="8dp">
+                    <EditText
+                            android:id="@+id/customerId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="document"
+                            android:inputType="text"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout14"
-                    card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout13"
-                    card_view:layout_constraintBottom_toTopOf="@+id/account">
-                <EditText
-                        android:id="@+id/password"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="password"
-                        android:inputType="textPassword"
-                        android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout14"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout13"
+                        card_view:layout_constraintBottom_toTopOf="@+id/account">
+                    <EditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="password"
+                            android:inputType="textPassword"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout13"
-                    card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout12"
-                    card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout14">
-                <EditText
-                        android:id="@+id/mobile"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="mobile"
-                        android:inputType="number"
-                        android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout13"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout12"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout14">
+                    <EditText
+                            android:id="@+id/mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="mobile"
+                            android:inputType="number"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout12"
-                    card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout11"
-                    card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout13">
-                <EditText
-                        android:id="@+id/phone"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="phone"
-                        android:inputType="number"
-                        android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout12"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout11"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout13">
+                    <EditText
+                            android:id="@+id/phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="phone"
+                            android:inputType="number"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textInputLayout"
-                    card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout9"
-                    card_view:layout_constraintHorizontal_bias="0.5"
-                    card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout10">
-                <EditText
-                        android:id="@+id/name"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="name"
-                        android:inputType="text"
-                        android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        android:id="@+id/textInputLayout"
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout9"
+                        card_view:layout_constraintHorizontal_bias="0.5"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout10">
+                    <EditText
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="name"
+                            android:inputType="text"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout10"
-                    card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-                    card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout11">
-
-
-                <EditText
-                        android:id="@+id/surname"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="surname"
-                        android:inputType="text"
-                        android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout10"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout11">
 
-            <com.google.android.material.textfield.TextInputLayout
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout11"
-                    card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout10"
-                    card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout12">
-                <EditText
-                        android:id="@+id/email"
-                        android:layout_width="match_parent"
+                    <EditText
+                            android:id="@+id/surname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="surname"
+                            android:inputType="text"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="email"
-                        android:inputType="textEmailAddress"
-                        android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <androidx.appcompat.widget.AppCompatButton
-                    android:text="create account"
-                    android:layout_width="286dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/account"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:background="@null"
-                    card_view:layout_constraintBottom_toBottomOf="parent"
-                    card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout14"
-                    card_view:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp" card_view:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintHorizontal_bias="0.5" android:id="@+id/textInputLayout11"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout10"
+                        card_view:layout_constraintBottom_toTopOf="@+id/textInputLayout12">
+                    <EditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="email"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                        android:text="create account"
+                        android:layout_width="286dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/account"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:background="@null"
+                        card_view:layout_constraintBottom_toBottomOf="parent"
+                        card_view:layout_constraintTop_toBottomOf="@+id/textInputLayout14"
+                        card_view:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp" card_view:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.cardview.widget.CardView>
-    <TextView
-            android:text="Transaction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:textColor="@color/white"
-            card_view:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
-            card_view:layout_constraintVertical_chainStyle="packed"
-            card_view:layout_constraintEnd_toStartOf="@+id/imageView2"
-            card_view:layout_constraintHorizontal_bias="0.74"
-            card_view:layout_constraintTop_toTopOf="@+id/imageView2"
-            card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            card_view:layout_constraintHorizontal_chainStyle="packed" android:layout_marginEnd="8dp"
-            card_view:layout_constraintVertical_bias="0.524"/>
-    <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp" card_view:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageView2"
-            card_view:layout_constraintStart_toEndOf="@+id/textView"
-            card_view:layout_constraintHorizontal_bias="0.5"
-            card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="32dp" android:layout_marginBottom="8dp"
-            card_view:layout_constraintBottom_toTopOf="@+id/cardView"
-            card_view:layout_constraintVertical_bias="0.120000005"
-            android:layout_marginStart="16dp"/>
+        </androidx.cardview.widget.CardView>
+        <TextView
+                android:text="Account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:textColor="@color/white"
+                card_view:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                card_view:layout_constraintVertical_chainStyle="packed"
+                card_view:layout_constraintEnd_toStartOf="@+id/imageView2"
+                card_view:layout_constraintHorizontal_bias="0.74"
+                card_view:layout_constraintTop_toTopOf="@+id/imageView2"
+                card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                card_view:layout_constraintHorizontal_chainStyle="packed" android:layout_marginEnd="8dp"
+                card_view:layout_constraintVertical_bias="0.524"/>
+        <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp" card_view:srcCompat="@mipmap/ic_launcher"
+                android:id="@+id/imageView2"
+                card_view:layout_constraintStart_toEndOf="@+id/textView"
+                card_view:layout_constraintHorizontal_bias="0.5"
+                card_view:layout_constraintEnd_toEndOf="parent" card_view:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="32dp" android:layout_marginBottom="8dp"
+                card_view:layout_constraintBottom_toTopOf="@+id/cardView"
+                card_view:layout_constraintVertical_bias="0.120000005"
+                android:layout_marginStart="16dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

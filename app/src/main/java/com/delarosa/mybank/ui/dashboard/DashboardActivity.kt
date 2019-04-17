@@ -10,7 +10,7 @@ import com.delarosa.mybank.R
 import com.delarosa.mybank.ui.transaction.TransactionActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_dashboard.*
-import kotlinx.android.synthetic.main.activity_dashboard.amount
+
 /**
  * View, in this case activity, don't think, its job is show information already proccesed by viewModel
  */
@@ -31,15 +31,15 @@ class DashboardActivity : AppCompatActivity() {
             showMessage(it)
         })
 
-       /* viewModel.successResponseAmount.observe(this, Observer {
-            startActivity(Intent(this, TransactionActivity::class.java))
-        })*/
+        /* viewModel.successResponseAmount.observe(this, Observer {
+             startActivity(Intent(this, TransactionActivity::class.java))
+         })
 
-        viewModel.errorMessageTransaction.observe(this, Observer {
-            showMessage(it)
-        })
+         viewModel.errorMessageTransaction.observe(this, Observer {
+             showMessage(it)
+         })*/
 
-        viewModel.successResponseTransaction.observe(this, Observer {
+        viewModel.successResponseTransactionList.observe(this, Observer {
             adapter.postItemList = it ?: listOf()
             adapter.notifyDataSetChanged()
             recycler_view.scheduleLayoutAnimation()
@@ -51,7 +51,7 @@ class DashboardActivity : AppCompatActivity() {
         })
 
         see_amount.setOnClickListener { viewModel.getAmount() }
-        transaction.setOnClickListener { startActivity(Intent(this, TransactionActivity::class.java)) }
+        transactionList.setOnClickListener { startActivity(Intent(this, TransactionActivity::class.java)) }
     }
 
     private fun showMessage(message: String) =
@@ -65,6 +65,11 @@ class DashboardActivity : AppCompatActivity() {
         adapter = TransactionsAdapter(listOf())
         recycler_view.adapter = adapter
 
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 
 }

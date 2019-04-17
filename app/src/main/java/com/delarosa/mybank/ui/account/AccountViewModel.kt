@@ -4,11 +4,17 @@ import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.delarosa.mybank.datasource.WebAccess
+import com.delarosa.mybank.model.Customer
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import java.io.IOException
 
 /**
  * process all data and show its output to view.
  */
-class AccountViewModel : ViewModel() {
+open class AccountViewModel : ViewModel() {
 
     //outputs
     private val _errorMessage = MutableLiveData<String>()
@@ -28,7 +34,7 @@ class AccountViewModel : ViewModel() {
         password: String
     ) {
         if (validateData(costumerId, name, surname, email, mobile, password)) {
-            requestAccount(costumerId, name, surname, email, phone, mobile, password)
+            requestAccount(Customer(costumerId, name, surname, email, phone, mobile, password))
         } else (_errorMessage.postValue("Invalid Fields"))
 
     }
@@ -36,7 +42,7 @@ class AccountViewModel : ViewModel() {
     /**
      * this method valid data that user entered is correct
      */
-    private fun validateData(
+    fun validateData(
         costumerId: String,
         name: String,
         surname: String,
@@ -51,32 +57,28 @@ class AccountViewModel : ViewModel() {
                     && isValidText(mobile)
                     && isValidText(password))
 
-    private fun isValidEmail(email: String): Boolean = email.isNotEmpty() &&
+    fun isValidEmail(email: String): Boolean = email.isNotEmpty() &&
             Patterns.EMAIL_ADDRESS.matcher(email).matches()
 
-    private fun isValidText(string: String): Boolean = string.isNotEmpty()
+    fun isValidText(string: String): Boolean = string.isNotEmpty()
 
     /**
      * this method request account to the api, and show its response.
      * if response is ok, do intent to LoginActivity
      * if not show an error
      */
-    private fun requestAccount(
-        costumerId: String,
-        name: String,
-        surname: String,
-        email: String,
-        phone: String,
-        mobile: String,
-        password: String
-    ) {
-        //se comunica con el repositorio
-        if (1 == 1) {
-            _successResponse.postValue(Unit)
-        } else {
-            _errorMessage.postValue("Account Error")
+   private fun requestAccount(customer: Customer) {
+        GlobalScope.launch(Dispatchers.Main) {
+            try {
+                val webResponse = WebAccess.API.signUpAsync(customer = customer).await()
+                if (webResponse.isSuccessful) {
+                    _successResponse.postValue(Unit)
+                } else {
+                    _errorMessage.value = "List TransactionList Error"
+                }
+            } catch (e: IOException) {
+            }
         }
-
     }
 
 

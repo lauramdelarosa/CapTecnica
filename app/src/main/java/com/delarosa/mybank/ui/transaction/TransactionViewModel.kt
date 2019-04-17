@@ -3,6 +3,13 @@ package com.delarosa.mybank.ui.transaction
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.delarosa.mybank.datasource.WebAccess
+import com.delarosa.mybank.model.Transaction
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import java.io.IOException
+
 /**
  * process all data and show its output to view.
  */
@@ -17,13 +24,11 @@ class TransactionViewModel : ViewModel() {
 
     fun accountRequest(
         costumerId: String,
-        channelId: String,
-        product_number: String,
-        amount: String,
-        type: String
+        productNumber: String,
+        amount: String
     ) {
-        if (validateData(costumerId, channelId, product_number, amount, type)) {
-            requestTransaction(costumerId, channelId, product_number, amount, type)
+        if (validateData(costumerId, productNumber, amount)) {
+            requestTransaction(Transaction(costumerId, productNumber, 2, amount.toInt(), 3))
         } else (_errorMessage.postValue("Invalid Fields"))
 
     }
@@ -31,20 +36,15 @@ class TransactionViewModel : ViewModel() {
     /**
      * this method valid data that user entered is correct
      */
-    private fun validateData(
+     fun validateData(
         costumerId: String,
-        channelId: String,
-        product_number: String,
-        amount: String,
-        type: String
-    ): Boolean = (
-            isValidText(channelId)
-                    && isValidText(costumerId)
-                    && isValidText(product_number)
-                    && isValidText(amount)
-                    && isValidText(type))
+        productNumber: String,
+        amount: String
+    ): Boolean = (isValidText(costumerId)
+                    && isValidText(productNumber)
+                    && isValidText(amount))
 
-    private fun isValidText(string: String): Boolean = string.isNotEmpty()
+     fun isValidText(string: String): Boolean = string.isNotEmpty()
 
 
     /**
@@ -53,19 +53,20 @@ class TransactionViewModel : ViewModel() {
      * if not show an error
      */
 
-    private fun requestTransaction(
-        costumerId: String,
-        channelId: String,
-        pruduct_number: String,
-        amount: String,
-        type: String
-    ) {
-        //se comunica con el repositorio
-        if (1 == 1) {
-            _successResponse.postValue(Unit)
-        } else {
-            _errorMessage.postValue("Transaction Error")
-        }
+    private fun requestTransaction(transaction: Transaction) {
+        GlobalScope.launch(Dispatchers.Main) {
+            try {
+                val webResponse = WebAccess.API.saveTransactionAsync("awxy", transaction).await()
+                if (webResponse.isSuccessful) {
 
+                    _successResponse.postValue(Unit)
+
+                } else {
+                    _errorMessage.value = "Transaction Error"
+                }
+            } catch (e: IOException) {
+                _errorMessage.value = e.toString()
+            }
+        }
     }
 }
