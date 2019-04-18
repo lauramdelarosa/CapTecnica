@@ -51,8 +51,8 @@ class DashboardViewModel : ViewModel() {
     fun getAmount(customerId: String) {
         GlobalScope.launch(Dispatchers.Main) {
             try {
-                //   val webResponse = WebAccess.API.getCustomerProductsAsync(customerId).await()
-                val webResponse = WebAccess.API.getCustomerProductsAsync().await()
+                 val webResponse = WebAccess.API.getCustomerProductsAsync(customerId).await()
+                //  val webResponse = WebAccess.API.getCustomerProductsAsync().await()
                 if (webResponse.isSuccessful) {
                     val amount: Product? = webResponse.body()
                     _currentAmount.value = amount?.balance.toString()
@@ -76,8 +76,8 @@ class DashboardViewModel : ViewModel() {
 
         GlobalScope.launch(Dispatchers.Main) {
             try {
-                //  val webResponse = WebAccess.API.getLastTransactionsAsync(limit, costumerId, productNumber).await()
-                val webResponse = WebAccess.API.getLastTransactionsAsync().await()
+                 val webResponse = WebAccess.API.getLastTransactionsAsync(limit, costumerId, productNumber).await()
+                // val webResponse = WebAccess.API.getLastTransactionsAsync().await()
                 if (webResponse.isSuccessful) {
                     val postList: List<TransactionList>? = webResponse.body()
                     _successResponseTransaction.value = postList

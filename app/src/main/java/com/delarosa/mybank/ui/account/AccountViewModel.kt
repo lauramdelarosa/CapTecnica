@@ -77,6 +77,7 @@ open class AccountViewModel : ViewModel() {
                     _errorMessage.value = "List TransactionList Error"
                 }
             } catch (e: IOException) {
+                _errorMessage.value = e.toString()
             }
         }
     }
